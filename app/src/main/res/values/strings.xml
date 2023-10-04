@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Simple Fragments</string>
+    <string name="go_to_b">Go to Fragment B</string>
+    <string name="go_to_c">Go to Fragment C</string>
+    <string name="go_to_d">Go to Fragment D</string>
+    <string name="go_to_a">Go to Fragment A</string>
+    <string name="text_from_fragment_b">Text from Fragment B</string>
+    <string name="back">Back</string>
+</resources>
