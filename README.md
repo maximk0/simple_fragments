@@ -13,6 +13,8 @@ This application has 4 fragments:
 3. Fragment manager
 
 ## Preview
-[simple_fragments_video_preview.webm](https://github.com/maximk0/simple_fragments/assets/98814130/d904f4be-5d5a-47d1-8ecb-6cb51fd89fe2)
+Gif: 
+<img src="preview/simple_fragments_video_preview.gif"  width="350">
+Screenshots:
 <img src="preview/fragment_a.png"  width="350"> <img src="preview/fragment_b.png"  width="350"> 
 <img src="preview/fragment_c.png"  width="350"> <img src="preview/fragment_d.png"  width="350">
