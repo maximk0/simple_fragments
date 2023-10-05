@@ -4,6 +4,6 @@
     <string name="go_to_c">Go to Fragment C</string>
     <string name="go_to_d">Go to Fragment D</string>
     <string name="go_to_a">Go to Fragment A</string>
-    <string name="text_from_fragment_b">Text from Fragment B</string>
     <string name="back">Back</string>
+    <string name="enter_text_here">Enter text for transfer to fragment c</string>
 </resources>

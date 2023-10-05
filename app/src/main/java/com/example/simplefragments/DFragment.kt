@@ -7,25 +7,23 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.simplefragments.databinding.FragmentDBinding
 
-class DFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = DFragment()
-    }
+class DFragment : Fragment(R.layout.fragment_d) {
 
     private lateinit var binding: FragmentDBinding
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-
-        binding = FragmentDBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentDBinding.bind(view)
 
+        binding.buttonGo.setOnClickListener {
+            parentFragmentManager.popBackStack(AFragment.TAG, 0)
+        }
+
+    }
+
+    companion object {
+        fun newInstance() = DFragment()
+        const val TAG = "DFragment"
     }
 
 }
