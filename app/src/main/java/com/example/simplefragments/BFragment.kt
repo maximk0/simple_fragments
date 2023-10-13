@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.simplefragments.databinding.FragmentBBinding
 
-const val BUNDLE_KEY = "message"
 class BFragment : Fragment() {
 
     private lateinit var binding: FragmentBBinding
@@ -17,7 +16,7 @@ class BFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentBBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -28,10 +27,8 @@ class BFragment : Fragment() {
         binding.buttonGo.setOnClickListener {
             val textFromEditText = binding.editText.text.toString()
 
-            val bundle = Bundle()
-            bundle.putString(BUNDLE_KEY, textFromEditText)
-
-            findNavController().navigate(R.id.action_fragment_b_to_fragment_c, bundle)
+            val action = BFragmentDirections.actionFragmentBToFragmentC(textFromEditText)
+            findNavController().navigate(action)
         }
 
         binding.buttonBack.setOnClickListener {
