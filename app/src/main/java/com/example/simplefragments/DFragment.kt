@@ -5,25 +5,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.simplefragments.databinding.FragmentDBinding
 
-class DFragment : Fragment(R.layout.fragment_d) {
+class DFragment : Fragment() {
 
     private lateinit var binding: FragmentDBinding
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding = FragmentDBinding.bind(view)
-
-        binding.buttonGo.setOnClickListener {
-            parentFragmentManager.popBackStack(AFragment.TAG, 0)
-        }
-
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentDBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        fun newInstance() = DFragment()
-        const val TAG = "DFragment"
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.buttonGo.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_d_to_fragment_a)
+        }
+
     }
 
 }

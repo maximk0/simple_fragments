@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_a">
+
+    <fragment
+        android:id="@+id/fragment_a"
+        android:name="com.example.simplefragments.AFragment"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/action_fragment_a_to_fragment_b"
+            app:destination="@id/fragment_b" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_b"
+        android:name="com.example.simplefragments.BFragment"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/action_fragment_b_to_fragment_c"
+            app:destination="@id/fragment_c" />
+        <action
+            android:id="@+id/action_fragment_b_to_fragment_a"
+            app:destination="@id/fragment_a"
+            app:popUpTo="@id/fragment_a"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_c"
+        android:name="com.example.simplefragments.CFragment"
+        tools:layout="@layout/fragment_c" >
+        <action
+            android:id="@+id/action_fragment_c_to_fragment_d"
+            app:destination="@id/fragment_d"
+            app:popUpTo="@id/fragment_d"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_fragment_c_to_fragment_b"
+            app:destination="@id/fragment_b"
+            app:popUpTo="@id/fragment_b"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_d"
+        android:name="com.example.simplefragments.DFragment"
+        tools:layout="@layout/fragment_d" >
+        <action
+            android:id="@+id/action_fragment_d_to_fragment_a"
+            app:destination="@id/fragment_a"
+            app:popUpTo="@id/fragment_a"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
